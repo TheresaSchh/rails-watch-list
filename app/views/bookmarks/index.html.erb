@@ -1,0 +1,13 @@
+<h1> See all Bookmarks</h1>
+
+
+<ul>
+    <% @bookmarks.each do |bookmark| %>
+      <li>
+        <%= link_to bookmark.movie_id, bookmark_path(bookmark) %>
+        <%= bookmark.movie_id %> <%= bookmark.list_id %> <%= bookmark.comment %>
+      </li>
+    <% end %>
+
+    <%= link_to "Create a new Item", new_bookmark_path %>
+</ul>
