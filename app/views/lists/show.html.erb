@@ -2,4 +2,15 @@
 
 <%= link_to "Go back to List", lists_path %>
 
-<h1> <%= @list.movies %></h1>
+<h2>
+  <ul>
+    <% @list.movies.each do |movie| %>
+      <li>
+        <%= movie.title %>
+      </li>
+    <% end %>
+  </ul>
+</h2>
+
+<%= link_to "remove a bookmark", bookmark_path(@bookmark),
+    data: {turbo_method: :delete, tubo_confirm: "Sure?"} %>
